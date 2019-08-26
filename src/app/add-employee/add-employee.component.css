@@ -1,0 +1,33 @@
+.EmpCard{
+    width:600px;
+    margin-top: 40px;
+    margin-left: 300px;
+    padding-left: 20px;
+}
+#input{
+    margin-left: 50px;
+    width: 400px;
+}
+#Email{
+    margin-left: 80px;
+    width: 400px;
+}
+#roles{
+    margin-left: 90px;
+    width: 400px;
+
+}
+#manager{
+    margin-left: 60px;
+    width: 400px;
+}
+#dept{
+    margin-left: 40px;
+    width: 400px;
+}
+.content{
+    padding-left: 360px;
+}
+small{
+    padding-left: 120px;
+}

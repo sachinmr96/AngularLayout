@@ -1,0 +1,84 @@
+<mat-card class="EmpCard">
+
+        <mat-card-title class="header"><mat-icon style="font-size:40px" >person_add</mat-icon><small>EmployeeDetails</small></mat-card-title>
+        <mat-card-content>
+        <form [formGroup]="empForm">
+                <div>
+                        <div>
+                         <Label>EmployeeId</Label>       
+                        <mat-form-field  id="input">
+                          <input formControlName="EmployeeId" matInput>
+                        </mat-form-field>
+                        
+                         </div>
+                          <div>
+                                <Label>FirstName</Label>       
+                               <mat-form-field id="input">
+                                 <input  formControlName="FirstName" matInput>
+                               </mat-form-field>
+
+                          </div>
+                           <div>
+                                <Label>LastName</Label>       
+                               <mat-form-field id="input">
+                                 <input  formControlName="LastName" matInput>
+                               </mat-form-field>
+                          </div>
+                          <div>
+                                        <Label>MangerId</Label>       
+                                       <mat-form-field id="manager">
+                                         <input formControlName="MangerId"  matInput>
+                                       </mat-form-field>
+                                  </div>
+                          <div>
+                                <Label>Email</Label>       
+                                       <mat-form-field id="Email">
+                                         <input  formControlName="Email" matInput>
+                                </mat-form-field>
+                                <mat-error *ngIf="isValid('Email')">
+                                                <small>*Please enter a valid email address</small>
+                                </mat-error>
+                        </div>
+                        <div>
+                                        <label>Role</label>
+                                        <mat-form-field id='roles'>
+                                                        
+                                                        <mat-select formControlName="Role" >
+                                                          <mat-option *ngFor="let role of Roles" [value]="role">
+                                                            {{role}}
+                                                          </mat-option>
+                                                        </mat-select>
+                                         </mat-form-field>
+                        </div>
+                        <div>
+                                        <label>Department</label>
+                                        <mat-form-field id='dept'>
+                                                        
+                                                        <mat-select formControlName="Dept">
+                                                          <mat-option *ngFor="let dept of Departments" [value]="dept">
+                                                            {{dept}}
+                                                          </mat-option>
+                                                        </mat-select>
+                                         </mat-form-field>
+                        </div>
+                        <div class="content" 
+                        fxLayout="row" 
+                        fxLayout.xs="column" 
+                        fxFlexFill>
+                        <div  fxFlex="30" class="sec2" fxFlex.xs="12" >
+                        <button mat-raised-button color='warn' (click)='clear()'>clear</button>
+                        </div>
+                        <div fxFlex="50" class="sec2" fxFlex.xs="12" >
+                        <button mat-raised-button color='primary' (click)='submit()'>submit</button>
+                        </div>
+                                
+                        </div>
+                              
+                     
+                </div>
+                      
+        </form>
+        </mat-card-content>
+
+</mat-card>
+

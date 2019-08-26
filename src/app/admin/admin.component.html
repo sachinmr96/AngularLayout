@@ -1,0 +1,81 @@
+<div >
+<mat-card class="navbar"  >
+        <mat-card-content>
+            <div class="content" 
+            fxLayout="row" 
+            fxLayout.xs="column" 
+            fxFlexFill fxFlex='noshrink'>
+           
+           <div fxFlex="20" class="sec1" fxFlex.xs="55">
+               <h2  id='btn'>AccessTool</h2>
+           </div>
+           <div fxFlex="50" class="sec2" fxFlex.xs="12" >
+              <button  id='btn' #r="matMenuTrigger"  mat-button [matMenuTriggerFor]="resource">  <h2 (mouseover)="open(r)" >Resource</h2></button>
+              <mat-menu #resource="matMenu" [overlapTrigger]="false" >
+                <button mat-menu-item>
+                   <mat-icon>create_new_folder</mat-icon>AddResource</button>
+                <button mat-menu-item>
+                    <mat-icon>create_new_folder</mat-icon>view resource</button>
+              </mat-menu>
+           </div>
+           <div fxFlex class="sec3" fxFlex.xs="15">
+              <button  id='btn'  #a="matMenuTrigger" mat-button [matMenuTriggerFor]="Action">  <h2 (mouseover)="open(a)" >Action</h2></button>
+              <mat-menu #Action="matMenu" [overlapTrigger]="false" >
+               <button (click)='addEmployee()' mat-menu-item><mat-icon>person_add</mat-icon>Add Employee</button>
+                <button mat-menu-item><mat-icon>visibility</mat-icon>CheckAccess</button>
+                <button mat-menu-item><mat-icon>block</mat-icon>Block Employee</button>
+                
+              </mat-menu>
+           </div>
+           <div fxFlex class="sec4" fxFlex.xs="15">
+              <button  id='btn'  #n="matMenuTrigger"   mat-icon-button [matMenuTriggerFor]="notification"><mat-icon (mouseover)="open(n)" color='primary' style="font-size:30px" matBadge="15" matBadgeColor="warn">message</mat-icon></button>
+           
+             <mat-menu #notification="matMenu"  [overlapTrigger]="false" class="profile">
+              <button mat-menu-item>
+                 
+                 <mat-icon>message</mat-icon>new message from sachin Kumar M R
+             
+              </button>
+              <button mat-menu-item>
+                 <mat-icon>message</mat-icon>new message from suraj kumar
+                 <h1>6 min ago</h1>
+        
+              </button>
+              <button mat-menu-item>
+                 <mat-icon>message</mat-icon>new message from rahul
+        
+              </button>
+              <button mat-menu-item>view all
+        
+              </button>
+            </mat-menu>
+           </div>
+           <div fxFlex class="sec5" fxFlex.xs="15">
+             <button id='btn'  #p="matMenuTrigger"  mat-icon-button [matMenuTriggerFor]="profile"> <mat-icon (mouseover)="open(p)" color='warn' style="font-size:40px" >account_circle</mat-icon></button>
+             <mat-menu #profile="matMenu" class="profile" [overlapTrigger]="false">
+              <button mat-menu-item >
+                 
+                 <span> <i><mat-icon  >account_circle</mat-icon> </i></span>
+                 <span><i>Sachin Kumar M R</i></span>
+             
+              </button>
+              <button mat-menu-item>
+                 <mat-icon>power_settings_new</mat-icon>Logout
+        
+              </button>
+              <button mat-menu-item>
+                 <mat-icon>settings</mat-icon>Settings
+        
+              </button>
+            </mat-menu>
+           </div>
+           
+        </div>
+        </mat-card-content>
+        
+        </mat-card><!--The content below is only a placeholder and can be replaced.-->
+    </div>
+        <div>
+        <router-outlet></router-outlet>
+        </div>
+        
